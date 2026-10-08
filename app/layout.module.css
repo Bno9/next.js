@@ -1,0 +1,8 @@
+/* faixa central onde cada pagina e renderizada */
+.main {
+    width: 100%;
+    flex: 1;
+    max-width: var(--largura-max);
+    margin-inline: auto;
+    padding: 2.5rem 1rem;
+}

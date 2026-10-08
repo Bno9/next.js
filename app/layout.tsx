@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import styles from "./layout.module.css";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Viagens",
@@ -9,15 +11,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="pt-br"
-    >
-
-      <body className="min-h-full flex flex-col">
-        
-      <Header></Header>
-      {children}
-      <Footer></Footer>
+    <html lang="pt-br">
+      <body>
+        <Header />
+        <main className={styles.main}>{children}</main>
+        <Footer />
       </body>
     </html>
   );

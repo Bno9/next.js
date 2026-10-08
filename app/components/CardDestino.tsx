@@ -1,16 +1,19 @@
 import DestinoProp from "../types/DestinoType";
+import styles from "./CardDestino.module.css";
 
-const CardDestino = ({ destino }: { destino: DestinoProp }) => {   
+const CardDestino = ({ destino }: { destino: DestinoProp }) => {
     return (
-        <div className="max-w-sm rounded overflow-hidden shadow-lg">
-            <img className="w-full" src={destino.imagem} alt={destino.nome} />
-            <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">{destino.nome}</div>
-                <p className="text-gray-700 text-base">{destino.descricao}</p>
+        <article className={styles.card}>
+            <div className={styles.media}>
+                <img className={styles.imagem} src={destino.imagem} alt={destino.nome} />
             </div>
-        </div>
+
+            <div className={styles.conteudo}>
+                <h2 className={styles.nome}>{destino.nome}</h2>
+                <p className={styles.descricao}>{destino.descricao}</p>
+            </div>
+        </article>
     );
 }
-
 
 export default CardDestino;

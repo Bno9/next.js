@@ -1,0 +1,69 @@
+/* Estilos globais: reset, variaveis de tema e tipografia base.
+   Tudo que e especifico de um componente vive no .module.css dele. */
+
+:root {
+    /* cores */
+    --azul: #1668b8;
+    --azul-escuro: #0f4c81;
+    --azul-claro: #e8f1f9;
+    --texto: #1f2933;
+    --texto-suave: #52606d;
+    --fundo: #f5f7fa;
+    --superficie: #ffffff;
+    --borda: #e4e7eb;
+    --rodape: #1f2933;
+
+    /* formas */
+    --raio: 12px;
+    --raio-pequeno: 6px;
+    --sombra: 0 1px 2px rgba(16, 24, 40, 0.06), 0 1px 3px rgba(16, 24, 40, 0.1);
+    --sombra-alta: 0 10px 20px rgba(16, 24, 40, 0.12), 0 4px 8px rgba(16, 24, 40, 0.08);
+
+    /* medidas */
+    --largura-max: 1120px;
+    --transicao: 200ms ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: var(--azul);
+}
+
+/* respeita quem desligou animacoes no sistema operacional */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

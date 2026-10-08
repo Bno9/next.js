@@ -1,0 +1,54 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: transform var(--transicao), box-shadow var(--transicao);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-alta);
+}
+
+/* moldura da imagem: recorta o zoom do hover */
+.media {
+    overflow: hidden;
+    background-color: var(--azul-claro);
+}
+
+/* aspect-ratio + object-fit: todas as fotos ficam do mesmo tamanho
+   e sem distorcao, independente da proporcao do arquivo original */
+.imagem {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    transition: transform 400ms ease;
+}
+
+.card:hover .imagem {
+    transform: scale(1.05);
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.25rem;
+    flex: 1; /* alinha o rodape dos cards mesmo com textos de tamanhos diferentes */
+}
+
+.nome {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--texto);
+}
+
+.descricao {
+    margin: 0;
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+}

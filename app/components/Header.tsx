@@ -1,19 +1,20 @@
 import Link from "next/link";
+import styles from "./Header.module.css";
 
 const Header = () => {
   return (
-    <header className="bg-blue-500 text-white p-4">
-      <h1 className="text-2xl font-bold">Viagens</h1>
+    <header className={styles.header}>
+      <div className={styles.conteudo}>
+        <span className={styles.marca}>Viagens</span>
 
-      <section>
         <nav>
-            <ul className="flex space-x-4">
-              <li><Link href="/" className="hover:underline">Início</Link></li>
-              <li><Link href="/destinos" className="hover:underline">Destinos</Link></li>
-              <li><Link href="/contato" className="hover:underline">Contato</Link></li>
-            </ul>
+          <ul className={styles.lista}>
+            <li><Link href="/" className={styles.link}>Início</Link></li>
+            <li><Link href="/destinos" className={styles.link}>Destinos</Link></li>
+            <li><Link href="/contato" className={styles.link}>Contato</Link></li>
+          </ul>
         </nav>
-      </section>
+      </div>
     </header>
   );
 }

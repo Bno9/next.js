@@ -1,5 +1,6 @@
 import DestinoProp from "../types/DestinoType";
 import CardDestino from "../components/CardDestino";
+import styles from "./destinos.module.css";
 
 const Destinos = () => {
 
@@ -18,14 +19,24 @@ const Destinos = () => {
         nome: "Foz do Iguaçu",
         descricao: "Lar das famosas Cataratas do Iguaçu, uma das maiores quedas d'água do mundo.",
         imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuCHvJB8GwgDLsvngl2SylR_qcGlpQNkf0ipdXqhzPCg&s=10"
+    },
+    {
+        nome: "Florianópolis",
+        descricao: "Capital de Santa Catarina, conhecida por suas belas praias e vida noturna.",
+        imagem: "https://www.civitatis.com/blog/wp-content/uploads/2022/08/florianopolis.jpg"
+    },
+    {
+        nome: "Manaus",
+        descricao: "Porta de entrada para a Amazônia, famosa pelo Teatro Amazonas e pelo Encontro das Águas.",
+        imagem: "https://www.civitatis.com/blog/wp-content/uploads/2022/08/manaus.jpg"
     }
     ]
 
     return (
         <div>
-            <h1 className="text-2xl font-bold">Destinos</h1>
-            <p>Confira nossos destinos turísticos!</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <h1 className={styles.titulo}>Destinos</h1>
+            <p className={styles.subtitulo}>Confira nossos destinos turísticos!</p>
+            <div className={styles.grade}>
                 {destinos.map((destino, index) => (
                     <CardDestino key={index} destino={destino} />
                 ))}

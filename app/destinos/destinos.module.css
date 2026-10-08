@@ -1,0 +1,20 @@
+.titulo {
+    font-size: clamp(1.6rem, 4vw, 2.25rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+}
+
+.subtitulo {
+    margin: 0 0 2rem;
+    color: var(--texto-suave);
+}
+
+/* auto-fill + minmax: a quantidade de colunas se ajusta sozinha
+   a largura disponivel, sem precisar declarar breakpoints */
+.grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+}
